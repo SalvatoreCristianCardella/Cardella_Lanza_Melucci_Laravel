@@ -75,7 +75,7 @@ class publicController extends Controller
             'Name' => 'Andrea',
             'Surname' => 'Palermo',
             'Age' => '27',
-            'Language' => 'SCRUM', 'PHP',
+            'Language' => 'MYSQL',
             'City' => 'Roma',
             'id' => 8,
         ],
@@ -86,4 +86,19 @@ class publicController extends Controller
         return view ('studenti', ['students' => $this-> students]);
     }
 
+    public function studentByLanguage($language) {
+
+       
+        $studentByLanguage = [];
+    
+        foreach ($this->students as $student) {
+            if(strtolower($student['Language']) == strtolower($language)) {
+                array_push($studentByLanguage, $student);
+            }
+        }
+    
+        return view('filtered', ['students' => $studentByLanguage, 'Language' => $language]);
+    }
 }
+
+

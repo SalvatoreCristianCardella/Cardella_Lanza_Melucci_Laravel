@@ -7,7 +7,7 @@
       <h5 class="card-title">{{$cardSurname}}</h5>
       <p class="card-text">{{$cardAge}}</p>
       <p class="card-text">{{$cardCity}}</p>
-      <a href="#" class="btn btn-primary">{{$cardLanguage}}</a>
+      <a href="{{route('studentByLanguage' , ['Language' => $cardLanguage])}}">{{$cardLanguage}}</a>
     </div>
 </div>
 

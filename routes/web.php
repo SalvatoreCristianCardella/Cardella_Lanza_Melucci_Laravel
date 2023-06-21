@@ -21,5 +21,6 @@ Route::get('/', function () {
 
 Route::get('/studenti', [publicController::class , 'student'])-> name('studenti');
 
-
+    
+Route::get('/student/Language/{Language}', [publicController::class , 'studentByLanguage'])-> name('studentByLanguage');
 
