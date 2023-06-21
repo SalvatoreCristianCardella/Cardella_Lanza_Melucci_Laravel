@@ -19,8 +19,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/studenti', [publicController::class , 'student'])-> name('studenti');
+Route::get('/studenti', [PublicController::class , 'student'])-> name('studenti');
 
     
-Route::get('/student/Language/{Language}', [publicController::class , 'studentByLanguage'])-> name('studentByLanguage');
+Route::get('/student/Language/{Language}', [PublicController::class , 'studentByLanguage'])-> name('studentByLanguage');
 
+Route::get('/search', [PublicController::class, 'searchStudent'])-> name('searchStudent');

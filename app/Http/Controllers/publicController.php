@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class publicController extends Controller
@@ -99,6 +100,20 @@ class publicController extends Controller
     
         return view('filtered', ['students' => $studentByLanguage, 'Language' => $language]);
     }
+
+    public function searchStudent(Request $request)
+    {
+        $searchKey = $request->query('chiavediricerca');
+       $searchStudent=[];
+
+       foreach ($this->students as $student) {
+             if(Str::of(Str::lower($student['Surname']))->contains(Str::lower($searchKey))); {
+             $searchStudent = $student;
+             }
+       }
+       return view('search', ['students' => $searchStudent, 'searchKey' => $searchKey]);
+    }
+
 }
 
 
