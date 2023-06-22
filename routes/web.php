@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\publicController;
+use App\Http\Controllers\InfoController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,9 @@ Route::get('/studenti', [PublicController::class , 'student'])-> name('studenti'
 Route::get('/student/Language/{Language}', [PublicController::class , 'studentByLanguage'])-> name('studentByLanguage');
 
 Route::get('/search', [PublicController::class, 'searchStudent'])-> name('searchStudent');
+
+Route::post('/candidati')->name('candidati');
+
+Route::get('/information', [InfoController::class, 'info'])->name('info');
+
+Route::post('/mail', [InfoController::class, 'contact'])->name('mail');

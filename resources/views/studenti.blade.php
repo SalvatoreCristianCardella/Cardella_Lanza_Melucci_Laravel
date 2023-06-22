@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             @foreach ($students as $student)
-                <div class="col-12 col-md-3">
+                <div class="col-12 col-md-4">
                   <x-card
                   cardImg="{{$student ['Img']}}"
                   cardName="{{$student ['Name']}}"

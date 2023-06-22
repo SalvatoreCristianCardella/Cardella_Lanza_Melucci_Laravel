@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
-class publicController extends Controller
+class PublicController extends Controller
 {
     public $students= [
         [
@@ -107,12 +107,14 @@ class publicController extends Controller
        $searchStudent=[];
 
        foreach ($this->students as $student) {
-             if(Str::of(Str::lower($student['Surname']))->contains(Str::lower($searchKey))); {
-             $searchStudent = $student;
+             if(Str::of(Str::lower($student['Surname']))->contains(Str::lower($searchKey)))
+             {
+             $searchStudent[] = $student;
              }
        }
        return view('search', ['students' => $searchStudent, 'searchKey' => $searchKey]);
     }
+    
 
 }
 

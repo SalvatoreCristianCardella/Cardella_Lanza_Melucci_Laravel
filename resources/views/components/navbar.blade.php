@@ -10,11 +10,15 @@
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/studenti">Studenti</a>
+            <a class="nav-link" href="{{route('studenti')}}">Studenti</a>
           </li>
          
           <li class="nav-item">
-            <a class="nav-link">Altro link</a>
+            <a class="nav-link" href="{{route('candidati')}}">Candidati</a>
+          </li>
+
+          <li  class="nav-item">
+            <a class="nav-link" href="{{route('info')}}">Info</a>
           </li>
         </ul>
         <form class="d-flex" role="search" method="GET"  action="{{ route('searchStudent') }}" class="d-flex">
