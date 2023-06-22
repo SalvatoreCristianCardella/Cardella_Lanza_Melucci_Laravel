@@ -27,7 +27,7 @@ class InfoController extends Controller
 
         //  return redirect()->route('thankyou');
         // ? nella nuova versione di Laravel possiamo abbreviare la riga precedente con
-        return to_route('thankyou');
+        // return to_route('thankyou');
 
     }
 }
